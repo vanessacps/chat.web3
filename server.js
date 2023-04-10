@@ -30,7 +30,7 @@ serverSocket.on('connection',function(socket){
     
     socket.on('chat msg', function(msg){
         console.log('Msg recebida do cliente' +socket.nickname+  ': ' + msg );
-        socket.broadcast.emit('chat msg', `${socket.nickname}: ${msg}`)
+        serverSocket.emit('chat msg', `${socket.nickname}: ${msg}`)
 
     })
 
